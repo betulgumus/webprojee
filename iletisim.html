@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Betül Gümüş iletişim sayfası. Form doğrulaması hem Native JavaScript hem Vue.js ile yapılmaktadır." />
+  <title>İletişim | Betül Gümüş</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <div class="brand-logo">BG</div>
+      <span class="brand-text">Betül Gümüş</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+      aria-controls="navMenu" aria-expanded="false" aria-label="Menüyü Aç">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link nav-login ms-2" href="login.html">Giriş Yap</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <header style="background: linear-gradient(135deg, var(--bg-primary) 0%, #0a1628 100%); padding: 70px 0 50px; text-align:center;">
+    <div class="container">
+      <div class="accent-line mx-auto"></div>
+      <h1 class="section-title">İletişim</h1>
+      <p class="section-subtitle">Benimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.</p>
+    </div>
+  </header>
+
+  <!-- FORM ALANI -->
+  <section class="form-section" id="vueApp">
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <!-- Sol: İletişim Bilgileri -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div style="padding-top: 1rem;">
+            <h2 style="font-size:1.4rem; font-weight:800; margin-bottom:1.5rem;">Bana Ulaşın</h2>
+
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="card-icon" style="flex-shrink:0;"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <div style="font-weight:700; margin-bottom:3px;">E-posta</div>
+                <div style="color:var(--text-secondary); font-size:0.9rem;">b231210091@sakarya.edu.tr</div>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="card-icon" style="flex-shrink:0;"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <div style="font-weight:700; margin-bottom:3px;">Konum</div>
+                <div style="color:var(--text-secondary); font-size:0.9rem;">Sakarya, Türkiye</div>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3 mb-4">
+              <div class="card-icon" style="flex-shrink:0;"><i class="bi bi-github"></i></div>
+              <div>
+                <div style="font-weight:700; margin-bottom:3px;">GitHub</div>
+                <a href="https://github.com/" target="_blank" style="color:var(--accent); font-size:0.9rem;">github.com/kullaniciadi</a>
+              </div>
+            </div>
+
+            <!-- Doğrulama Türü Açıklaması -->
+            <div style="background:rgba(245,158,11,0.08); border:1px solid var(--border); border-radius:var(--radius); padding:16px; margin-top:2rem;">
+              <div style="font-weight:700; color:var(--accent); margin-bottom:0.5rem; font-size:0.9rem;">
+                <i class="bi bi-info-circle me-1"></i> İki Farklı Doğrulama
+              </div>
+              <p style="color:var(--text-muted); font-size:0.82rem; margin:0;">
+                <strong style="color:var(--text-secondary);">Buton 1 — Native JS:</strong> Saf JavaScript ile form kontrol edilir.<br><br>
+                <strong style="color:var(--text-secondary);">Buton 2 — Vue.js:</strong> Reaktif Vue.js ile anlık alan denetimi yapılır.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sağ: Form -->
+        <div class="col-lg-8">
+          <div class="form-card">
+
+            <!-- Başarı/Hata Alertleri -->
+            <div id="jsAlert" class="alert-dark" style="display:none;"></div>
+            <div id="vueAlertBox" class="alert-dark" style="display:none;"></div>
+
+            <form id="iletisimForm" action="form_isle.php" method="POST" novalidate>
+
+              <!-- Ad & Soyad -->
+              <div class="row g-3 mb-0">
+                <div class="col-sm-6 form-group">
+                  <label class="form-label" for="ad">Ad <span style="color:#f87171;">*</span></label>
+                  <input type="text" id="ad" name="ad" class="form-control-dark" placeholder="Adınız" />
+                  <div class="error-msg" id="err-ad">Ad alanı boş bırakılamaz.</div>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label class="form-label" for="soyad">Soyad <span style="color:#f87171;">*</span></label>
+                  <input type="text" id="soyad" name="soyad" class="form-control-dark" placeholder="Soyadınız" />
+                  <div class="error-msg" id="err-soyad">Soyad alanı boş bırakılamaz.</div>
+                </div>
+              </div>
+
+              <!-- E-posta -->
+              <div class="form-group">
+                <label class="form-label" for="email">E-posta <span style="color:#f87171;">*</span></label>
+                <input type="email" id="email" name="email" class="form-control-dark" placeholder="ornek@mail.com" />
+                <div class="error-msg" id="err-email">Geçerli bir e-posta adresi giriniz.</div>
+              </div>
+
+              <!-- Telefon -->
+              <div class="form-group">
+                <label class="form-label" for="telefon">Telefon <span style="color:#f87171;">*</span></label>
+                <input type="tel" id="telefon" name="telefon" class="form-control-dark" placeholder="05XXXXXXXXX" maxlength="11" />
+                <div class="error-msg" id="err-telefon">Telefon sadece rakam içermeli ve 10-11 haneli olmalıdır.</div>
+              </div>
+
+              <!-- Yaş (number) -->
+              <div class="form-group">
+                <label class="form-label" for="yas">Yaş</label>
+                <input type="number" id="yas" name="yas" class="form-control-dark" placeholder="Yaşınız" min="1" max="120" />
+              </div>
+
+              <!-- Doğum Tarihi (date) -->
+              <div class="form-group">
+                <label class="form-label" for="dogum_tarihi">Doğum Tarihi</label>
+                <input type="date" id="dogum_tarihi" name="dogum_tarihi" class="form-control-dark" />
+              </div>
+
+              <!-- Konu (select) -->
+              <div class="form-group">
+                <label class="form-label" for="konu">Konu <span style="color:#f87171;">*</span></label>
+                <select id="konu" name="konu" class="form-control-dark">
+                  <option value="">-- Konu Seçiniz --</option>
+                  <option value="is_birligi">İş Birliği</option>
+                  <option value="proje">Proje Teklifi</option>
+                  <option value="staj">Staj / İşe Alım</option>
+                  <option value="satranc">Satranç Eğitimi</option>
+                  <option value="diger">Diğer</option>
+                </select>
+                <div class="error-msg" id="err-konu">Lütfen bir konu seçiniz.</div>
+              </div>
+
+              <!-- İletişim Tercihi (radio) -->
+              <div class="form-group">
+                <label class="form-label">İletişim Tercihi <span style="color:#f87171;">*</span></label>
+                <div class="form-check-dark">
+                  <input type="radio" id="iletisim-email" name="iletisimTercihi" value="E-posta" />
+                  <label for="iletisim-email">E-posta</label>
+                </div>
+                <div class="form-check-dark">
+                  <input type="radio" id="iletisim-tel" name="iletisimTercihi" value="Telefon" />
+                  <label for="iletisim-tel">Telefon</label>
+                </div>
+                <div class="form-check-dark">
+                  <input type="radio" id="iletisim-whatsapp" name="iletisimTercihi" value="WhatsApp" />
+                  <label for="iletisim-whatsapp">WhatsApp</label>
+                </div>
+                <div class="error-msg" id="err-iletisim">İletişim tercihinizi seçiniz.</div>
+              </div>
+
+              <!-- Mesaj (textarea) -->
+              <div class="form-group">
+                <label class="form-label" for="mesaj">Mesaj <span style="color:#f87171;">*</span></label>
+                <textarea id="mesaj" name="mesaj" class="form-control-dark" rows="5"
+                  placeholder="Mesajınızı buraya yazınız..." style="resize:vertical;"></textarea>
+                <div class="error-msg" id="err-mesaj">Mesaj alanı en az 10 karakter olmalıdır.</div>
+              </div>
+
+              <!-- Checkbox'lar -->
+              <div class="form-group">
+                <div class="form-check-dark">
+                  <input type="checkbox" id="bulten" name="bulten" value="1" />
+                  <label for="bulten">E-bülten aboneliği (güncellemelerden haberdar ol)</label>
+                </div>
+                <div class="form-check-dark">
+                  <input type="checkbox" id="gizlilik" name="gizlilik" value="1" />
+                  <label for="gizlilik">Gizlilik politikasını okudum ve kabul ediyorum <span style="color:#f87171;">*</span></label>
+                </div>
+                <div class="error-msg" id="err-gizlilik">Gizlilik politikasını kabul etmeniz gerekmektedir.</div>
+              </div>
+
+              <!-- BUTON ALANI -->
+              <div class="d-flex gap-3 flex-wrap mt-4">
+                <!-- BUTON 1: Native JavaScript Doğrulama -->
+                <button type="button" id="btnJS" class="btn-gold" onclick="dogrulaJS()">
+                  <i class="bi bi-braces"></i>
+                  Native JS ile Doğrula & Gönder
+                </button>
+
+                <!-- BUTON 2: Vue.js Doğrulama -->
+                <button type="button" id="btnVue" class="btn-vue" onclick="dogrulaVue()">
+                  <img src="https://vuejs.org/images/logo.png" alt="Vue" style="width:18px; height:18px;" />
+                  Vue.js ile Doğrula & Gönder
+                </button>
+              </div>
+
+            </form>
+
+          </div><!-- /form-card -->
+        </div>
+
+      </div><!-- /row -->
+    </div>
+  </section>
+
+</div><!-- /page-wrapper -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="footer-copy">© 2024 Betül Gümüş · Web Teknolojileri Ödevi · Sakarya Üniversitesi</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ============================================================
+     BUTON 1: Native JavaScript Doğrulama
+     ============================================================ -->
+<script>
+function dogrulaJS() {
+  let gecerli = true;
+
+  // Tüm hata mesajlarını sıfırla
+  document.querySelectorAll('.error-msg').forEach(el => el.classList.remove('show'));
+  document.querySelectorAll('.form-control-dark').forEach(el => {
+    el.classList.remove('field-error', 'field-success');
+  });
+
+  // Yardımcı fonksiyonlar
+  function hataGoster(id, inputId) {
+    document.getElementById(id).classList.add('show');
+    if (inputId) document.getElementById(inputId).classList.add('field-error');
+    gecerli = false;
+  }
+  function basariIsaretle(inputId) {
+    if (inputId) document.getElementById(inputId).classList.add('field-success');
+  }
+
+  // Ad
+  const ad = document.getElementById('ad').value.trim();
+  if (!ad) { hataGoster('err-ad', 'ad'); } else { basariIsaretle('ad'); }
+
+  // Soyad
+  const soyad = document.getElementById('soyad').value.trim();
+  if (!soyad) { hataGoster('err-soyad', 'soyad'); } else { basariIsaretle('soyad'); }
+
+  // E-posta — regex kontrolü
+  const email = document.getElementById('email').value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email || !emailRegex.test(email)) { hataGoster('err-email', 'email'); } else { basariIsaretle('email'); }
+
+  // Telefon — sadece rakam, 10-11 hane
+  const telefon = document.getElementById('telefon').value.trim();
+  const telRegex = /^[0-9]{10,11}$/;
+  if (!telefon || !telRegex.test(telefon)) { hataGoster('err-telefon', 'telefon'); } else { basariIsaretle('telefon'); }
+
+  // Konu (select)
+  const konu = document.getElementById('konu').value;
+  if (!konu) { hataGoster('err-konu', 'konu'); } else { basariIsaretle('konu'); }
+
+  // İletişim tercihi (radio)
+  const radios = document.querySelectorAll('input[name="iletisimTercihi"]');
+  const secili = Array.from(radios).some(r => r.checked);
+  if (!secili) { hataGoster('err-iletisim', null); gecerli = false; }
+
+  // Mesaj — en az 10 karakter
+  const mesaj = document.getElementById('mesaj').value.trim();
+  if (!mesaj || mesaj.length < 10) { hataGoster('err-mesaj', 'mesaj'); } else { basariIsaretle('mesaj'); }
+
+  // Gizlilik
+  const gizlilik = document.getElementById('gizlilik').checked;
+  if (!gizlilik) { hataGoster('err-gizlilik', null); gecerli = false; }
+
+  // Alert göster veya gönder
+  const alertEl = document.getElementById('jsAlert');
+  alertEl.style.display = 'block';
+
+  if (gecerli) {
+    alertEl.className = 'alert-dark alert-success-dark';
+    alertEl.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i> <strong>Native JS:</strong> Form doğrulandı! Gönderiliyor...';
+    setTimeout(() => { document.getElementById('iletisimForm').submit(); }, 800);
+  } else {
+    alertEl.className = 'alert-dark alert-error-dark';
+    alertEl.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-2"></i> <strong>Native JS:</strong> Lütfen kırmızıyla işaretlenmiş alanları düzeltin.';
+    alertEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+</script>
+
+<!-- ============================================================
+     BUTON 2: Vue.js Doğrulama
+     ============================================================ -->
+<script>
+function dogrulaVue() {
+  // Vue 3 reaktif doğrulama mantığı
+  const { createApp, reactive, computed } = Vue;
+
+  // Form alanlarını oku
+  const form = {
+    ad: document.getElementById('ad').value.trim(),
+    soyad: document.getElementById('soyad').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    telefon: document.getElementById('telefon').value.trim(),
+    konu: document.getElementById('konu').value,
+    mesaj: document.getElementById('mesaj').value.trim(),
+    iletisimTercihi: (() => {
+      const r = document.querySelector('input[name="iletisimTercihi"]:checked');
+      return r ? r.value : '';
+    })(),
+    gizlilik: document.getElementById('gizlilik').checked,
+  };
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const telRegex   = /^[0-9]{10,11}$/;
+
+  const hatalar = [];
+
+  // Tüm hata göstergelerini temizle
+  document.querySelectorAll('.error-msg').forEach(el => el.classList.remove('show'));
+  document.querySelectorAll('.form-control-dark').forEach(el => {
+    el.classList.remove('field-error', 'field-success');
+  });
+
+  function vueHata(id, inputId, mesaj) {
+    hatalar.push(mesaj);
+    document.getElementById(id).classList.add('show');
+    if (inputId) {
+      document.getElementById(inputId).classList.add('field-error');
+    }
+  }
+  function vueBasari(inputId) {
+    document.getElementById(inputId).classList.add('field-success');
+  }
+
+  if (!form.ad)                                 { vueHata('err-ad',       'ad',      'Ad boş'); }       else { vueBasari('ad'); }
+  if (!form.soyad)                              { vueHata('err-soyad',    'soyad',   'Soyad boş'); }    else { vueBasari('soyad'); }
+  if (!form.email || !emailRegex.test(form.email)) { vueHata('err-email', 'email',   'Email hatalı'); } else { vueBasari('email'); }
+  if (!form.telefon || !telRegex.test(form.telefon)) { vueHata('err-telefon','telefon','Tel hatalı'); } else { vueBasari('telefon'); }
+  if (!form.konu)                               { vueHata('err-konu',     'konu',    'Konu seçilmedi'); } else { vueBasari('konu'); }
+  if (!form.iletisimTercihi)                    { vueHata('err-iletisim', null, 'Tercih seçilmedi'); }
+  if (!form.mesaj || form.mesaj.length < 10)    { vueHata('err-mesaj',    'mesaj',   'Mesaj çok kısa'); } else { vueBasari('mesaj'); }
+  if (!form.gizlilik)                           { vueHata('err-gizlilik', null, 'Gizlilik kabul edilmedi'); }
+
+  const alertEl = document.getElementById('vueAlertBox');
+  alertEl.style.display = 'block';
+
+  if (hatalar.length === 0) {
+    alertEl.className = 'alert-dark alert-success-dark';
+    alertEl.innerHTML = `<i class="bi bi-check-circle-fill me-2"></i>
+      <strong>Vue.js:</strong> Reaktif doğrulama başarılı! ${hatalar.length} hata yok. Gönderiliyor...`;
+    setTimeout(() => { document.getElementById('iletisimForm').submit(); }, 800);
+  } else {
+    alertEl.className = 'alert-dark alert-error-dark';
+    alertEl.innerHTML = `<i class="bi bi-exclamation-triangle-fill me-2"></i>
+      <strong>Vue.js:</strong> ${hatalar.length} alan hatalı. Lütfen işaretlenen alanları düzeltin.`;
+    alertEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bursa şehir tanıtımı — nüfus, gezilecek yerler ve fotoğraf galerisi." />
+  <title>Şehrim: Bursa | Betül Gümüş</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <div class="brand-logo">BG</div>
+      <span class="brand-text">Betül Gümüş</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+      aria-controls="navMenu" aria-expanded="false" aria-label="Menüyü Aç">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+        <li class="nav-item"><a class="nav-link active" href="sehrim.html">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link nav-login ms-2" href="login.html">Giriş Yap</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- HERO HEADER -->
+  <header style="background: linear-gradient(135deg, rgba(7,11,21,0.9) 0%, rgba(10,22,40,0.9) 100%),
+                 url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Bursa_panoramic.jpg/1280px-Bursa_panoramic.jpg')
+                 center/cover no-repeat;
+                 padding: 90px 0 60px; text-align:center; position:relative;">
+    <div class="container" style="position:relative; z-index:2;">
+      <div class="accent-line mx-auto"></div>
+      <h1 class="section-title">Bursa</h1>
+      <p class="section-subtitle">Osmanlı'nın ilk başkenti, Yeşil Şehir</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <div class="hero-badge" style="display:inline-flex;">
+          <i class="bi bi-geo-alt-fill"></i> Marmara Bölgesi
+        </div>
+        <div class="hero-badge" style="display:inline-flex;">
+          <i class="bi bi-building"></i> Osmanlı Başkenti
+        </div>
+        <div class="hero-badge" style="display:inline-flex;">
+          <i class="bi bi-tree-fill"></i> Yeşil Şehir
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GENEL BİLGİLER (İstatistik kartları) -->
+  <section style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-lg-3">
+          <div class="city-info-card">
+            <div class="city-info-icon">👥</div>
+            <div class="city-info-num">3.1M+</div>
+            <div class="city-info-label">Nüfus</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="city-info-card">
+            <div class="city-info-icon">📐</div>
+            <div class="city-info-num">11.043</div>
+            <div class="city-info-label">km² Alan</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="city-info-card">
+            <div class="city-info-icon">🏙️</div>
+            <div class="city-info-num">17</div>
+            <div class="city-info-label">İlçe</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="city-info-card">
+            <div class="city-info-icon">🕌</div>
+            <div class="city-info-num">1326</div>
+            <div class="city-info-label">Kuruluş Yılı</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SLIDER (EN AZ 4 RESİM) ====== -->
+  <section id="slider-bolum">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="accent-line mx-auto"></div>
+        <h2 class="section-title">Bursa'dan Kareler</h2>
+        <p class="section-subtitle">Şehrin eşsiz güzelliklerinden seçilmiş fotoğraflar</p>
+      </div>
+
+      <!-- Bootstrap Carousel — tıklanabilir ok butonları -->
+      <div id="bursaSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+        <!-- Gösterge noktaları -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#bursaSlider" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+          <button type="button" data-bs-target="#bursaSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#bursaSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#bursaSlider" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#bursaSlider" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+
+        <!-- Slaytlar -->
+        <div class="carousel-inner" style="border-radius: var(--radius);">
+
+          <!-- Slayt 1: Ulucami -->
+          <div class="carousel-item active">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Ulu_Cami%2C_Bursa.jpg/1280px-Ulu_Cami%2C_Bursa.jpg"
+              class="d-block w-100"
+              alt="Bursa Ulucami"
+              style="height:520px; object-fit:cover;"
+            />
+            <div class="carousel-caption-custom">
+              <h5>Ulucami</h5>
+              <p>20 kubbesi ve eşsiz taç kapısıyla Bursa'nın simgesi olan büyük cami.</p>
+            </div>
+          </div>
+
+          <!-- Slayt 2: Uludağ -->
+          <div class="carousel-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Uludag_Bursa.jpg/1280px-Uludag_Bursa.jpg"
+              class="d-block w-100"
+              alt="Uludağ"
+              style="height:520px; object-fit:cover;"
+              onerror="this.src='https://picsum.photos/1280/520?random=1'"
+            />
+            <div class="carousel-caption-custom">
+              <h5>Uludağ</h5>
+              <p>Türkiye'nin en büyük kayak merkezi ve doğa parkı. Kar altında muhteşem bir manzara sunar.</p>
+            </div>
+          </div>
+
+          <!-- Slayt 3: Cumalıkızık -->
+          <div class="carousel-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Cumal%C4%B1k%C4%B1z%C4%B1k_k%C3%B6y%C3%BC.jpg/1280px-Cumal%C4%B1k%C4%B1z%C4%B1k_k%C3%B6y%C3%BC.jpg"
+              class="d-block w-100"
+              alt="Cumalıkızık Köyü"
+              style="height:520px; object-fit:cover;"
+              onerror="this.src='https://picsum.photos/1280/520?random=2'"
+            />
+            <div class="carousel-caption-custom">
+              <h5>Cumalıkızık Köyü</h5>
+              <p>UNESCO Dünya Mirası listesinde yer alan, 700 yıllık tarihi Osmanlı köyü.</p>
+            </div>
+          </div>
+
+          <!-- Slayt 4: Yeşil Türbe -->
+          <div class="carousel-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Green_Tomb%2C_Bursa%2C_Turkey.jpg/1280px-Green_Tomb%2C_Bursa%2C_Turkey.jpg"
+              class="d-block w-100"
+              alt="Yeşil Türbe"
+              style="height:520px; object-fit:cover;"
+              onerror="this.src='https://picsum.photos/1280/520?random=3'"
+            />
+            <div class="carousel-caption-custom">
+              <h5>Yeşil Türbe</h5>
+              <p>Çelebi Sultan Mehmed'in mozolesi. Zarif çinileriyle Osmanlı mimarisinin şaheseri.</p>
+            </div>
+          </div>
+
+          <!-- Slayt 5: Kapalıçarşı -->
+          <div class="carousel-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Bursa_Kapali_Carsi.jpg/1280px-Bursa_Kapali_Carsi.jpg"
+              class="d-block w-100"
+              alt="Bursa Kapalıçarşı"
+              style="height:520px; object-fit:cover;"
+              onerror="this.src='https://picsum.photos/1280/520?random=4'"
+            />
+            <div class="carousel-caption-custom">
+              <h5>Kapalıçarşı (Bedesten)</h5>
+              <p>14. yüzyıldan kalma, Türkiye'nin en eski kapalı çarşılarından biri.</p>
+            </div>
+          </div>
+
+        </div><!-- /carousel-inner -->
+
+        <!-- Ok Butonları (Tıklanabilir) -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#bursaSlider" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Önceki</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bursaSlider" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Sonraki</span>
+        </button>
+
+      </div><!-- /carousel -->
+    </div>
+  </section>
+
+  <!-- GEZİLECEK YERLER -->
+  <section style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="accent-line mx-auto"></div>
+        <h2 class="section-title">Gezilecek Yerler</h2>
+        <p class="section-subtitle">Bursa'nın öne çıkan turistik mekânları</p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="place-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Ulu_Cami%2C_Bursa.jpg/600px-Ulu_Cami%2C_Bursa.jpg"
+              alt="Ulucami" onerror="this.src='https://picsum.photos/600/300?random=10'" />
+            <div class="place-card-body">
+              <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.3rem;">Ulucami</h3>
+              <p style="color:var(--text-secondary); font-size:0.85rem; margin:0;">
+                1399'da tamamlanan ve 20 kubbesiyle Osmanlı mimarisinin başyapıtı sayılan büyük cami.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="place-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Uludag_Bursa.jpg/600px-Uludag_Bursa.jpg"
+              alt="Uludağ" onerror="this.src='https://picsum.photos/600/300?random=11'" />
+            <div class="place-card-body">
+              <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.3rem;">Uludağ Milli Parkı</h3>
+              <p style="color:var(--text-secondary); font-size:0.85rem; margin:0;">
+                2543 metre yüksekliğiyle Türkiye'nin en büyük kayak merkezi ve dört mevsim ziyaret edilen doğa parkı.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="place-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Cumal%C4%B1k%C4%B1z%C4%B1k_k%C3%B6y%C3%BC.jpg/600px-Cumal%C4%B1k%C4%B1z%C4%B1k_k%C3%B6y%C3%BC.jpg"
+              alt="Cumalıkızık" onerror="this.src='https://picsum.photos/600/300?random=12'" />
+            <div class="place-card-body">
+              <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.3rem;">Cumalıkızık Köyü</h3>
+              <p style="color:var(--text-secondary); font-size:0.85rem; margin:0;">
+                700 yıllık Osmanlı mirasını yaşatan, UNESCO tescilli köy. Dar taş sokakları ve ahşap evleriyle büyüleyici.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="place-card">
+            <img src="https://picsum.photos/600/300?random=13" alt="Yeşil Cami" />
+            <div class="place-card-body">
+              <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.3rem;">Yeşil Cami & Türbe</h3>
+              <p style="color:var(--text-secondary); font-size:0.85rem; margin:0;">
+                Sultan I. Mehmed dönemine ait; çini mozaikleriyle süslü, yeşil renkli mimari şaheseri.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="place-card">
+            <img src="https://picsum.photos/600/300?random=14" alt="Bursa Teleferik" />
+            <div class="place-card-body">
+              <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.3rem;">Bursa Teleferik</h3>
+              <p style="color:var(--text-secondary); font-size:0.85rem; margin:0;">
+                Şehir merkezinden Uludağ'a uzanan ve panoramik manzaralar sunan teleferik hattı.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="place-card">
+            <img src="https://picsum.photos/600/300?random=15" alt="Koza Han" />
+            <div class="place-card-body">
+              <h3 style="font-size:1rem; font-weight:700; margin-bottom:0.3rem;">Koza Han</h3>
+              <p style="color:var(--text-secondary); font-size:0.85rem; margin:0;">
+                15. yüzyıldan kalma tarihi han. Bursa'nın ipek ticaretinin simgesi; çarşı ve kafeler ile ziyaretçi çeker.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BURSA HAKKINDA GENEL BİLGİ -->
+  <section>
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="accent-line"></div>
+          <h2 class="section-title">Bursa Hakkında</h2>
+          <p style="color:var(--text-secondary); margin-bottom:1rem;">
+            Bursa, Türkiye'nin kuzeybatısında, Marmara Bölgesi'nde yer alan ve tarihî önemi ile doğal güzellikleri
+            bir arada barındıran bir şehirdir. Osmanlı Devleti'nin ilk başkenti olarak tarihe geçen Bursa,
+            bugün Türkiye'nin 4. büyük şehri konumundadır.
+          </p>
+          <p style="color:var(--text-secondary); margin-bottom:1.5rem;">
+            Otomobil ve tekstil sektörüyle Türkiye ekonomisine önemli katkılar sağlayan Bursa;
+            İpek Yolu üzerindeki konumuyla tarihi boyunca ticaret merkezi olmuştur.
+            Yeşil doğası, termal kaynakları ve kayak merkeziyle dört mevsim tercih edilen bir destinasyondur.
+          </p>
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="card-dark" style="padding:16px; text-align:center;">
+                <div style="color:var(--accent); font-weight:800; font-size:1.4rem;">4.</div>
+                <div style="color:var(--text-muted); font-size:0.82rem;">En Büyük Şehir</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card-dark" style="padding:16px; text-align:center;">
+                <div style="color:var(--accent); font-weight:800; font-size:1.4rem;">1326</div>
+                <div style="color:var(--text-muted); font-size:0.82rem;">Osmanlı'nın Başkenti</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-dark" style="padding:0; overflow:hidden;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192696.28584867!2d28.87989!3d40.18237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca14af4b4f8e5d%3A0xfb5d1fac2f6e6d6!2sBursa!5e0!3m2!1str!2str!4v1715000000000"
+              width="100%" height="350"
+              style="border:0; display:block;"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Bursa Haritası">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-wrapper -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="footer-copy">© 2024 Betül Gümüş · Web Teknolojileri Ödevi · Sakarya Üniversitesi</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

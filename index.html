@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Betül Gümüş kişisel web sitesi — Sakarya Üniversitesi Bilgisayar Mühendisliği öğrencisi." />
+  <title>Hakkında | Betül Gümüş</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Kendi CSS dosyamız -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+
+    <!-- Logo / İsim -->
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <div class="brand-logo">BG</div>
+      <span class="brand-text">Betül Gümüş</span>
+    </a>
+
+    <!-- Hamburger (mobil) -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#anaMenu"
+      aria-controls="anaMenu"
+      aria-expanded="false"
+      aria-label="Menüyü aç/kapat"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menü linkleri -->
+    <div class="collapse navbar-collapse" id="anaMenu">
+      <ul class="navbar-nav ms-auto align-items-center gap-1">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Hakkında</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cv.html">CV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sehrim.html">Şehrim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="miras.html">Mirasımız</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="iletisim.html">İletişim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-login ms-2" href="login.html">Giriş Yap</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+<!-- ==================== /NAVBAR ==================== -->
+
+
+<div class="page-wrapper">
+
+  <!-- ===================== HERO ====================== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Sol: Metin -->
+        <div class="col-lg-6 fade-in-up">
+          <div class="hero-badge">
+            <i class="bi bi-mortarboard-fill"></i>
+            Sakarya Üniversitesi · Bilgisayar Mühendisliği
+          </div>
+          <h1 class="hero-title">
+            Merhaba, Ben<br />
+            <span>Betül Gümüş</span>
+          </h1>
+          <p class="hero-desc">
+            Web teknolojileri, bilgisayarlı görü ve yapay zeka alanlarına
+            ilgi duyan bir bilgisayar mühendisliği öğrencisiyim.
+          </p>
+
+          <!-- İstatistikler -->
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">3+</div>
+              <div class="hero-stat-label">Yıl Deneyim</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">5+</div>
+              <div class="hero-stat-label">Proje</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">4.</div>
+              <div class="hero-stat-label">Sınıf Öğrencisi</div>
+            </div>
+          </div>
+
+          <!-- Butonlar -->
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="cv.html" class="btn-gold text-decoration-none">
+              <i class="bi bi-file-earmark-text"></i>CV'mi Gör
+            </a>
+            <a href="iletisim.html" class="btn-outline-gold text-decoration-none">
+              <i class="bi bi-envelope"></i>İletişime Geç
+            </a>
+          </div>
+        </div>
+
+        <!-- Sağ: Fotoğraf -->
+        <div class="col-lg-6 text-center">
+          <div class="hero-avatar-wrap">
+            <img
+              src="images/profil.jpg"
+              alt="Betül Gümüş profil fotoğrafı"
+              class="hero-avatar"
+              onerror="this.src='https://ui-avatars.com/api/?name=Betul+Gumus&background=f59e0b&color=000&size=400&bold=true&font-size=0.33'"
+            />
+            <!-- Floating badge -->
+            <div class="hero-avatar-badge">
+              Öğrenci No<span>b231210091</span>
+            </div>
+            <!-- Floating ikonlar -->
+            <div class="floating-icon chess">♟️</div>
+            <div class="floating-icon ball">🏀</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ==================== /HERO ====================== -->
+
+
+  <!-- ================== HAKKIMDA İÇERİK ============= -->
+  <section style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Metin -->
+        <div class="col-lg-7">
+          <div class="accent-line"></div>
+          <h2 class="section-title">Hakkımda</h2>
+          <p style="color:var(--text-secondary); margin-bottom:1rem;">
+            Sakarya Üniversitesi Bilgisayar Mühendisliği bölümünde öğrenim görmekteyim.
+            Web teknolojileri, bilgisayarlı görü ve yapay zeka alanlarına ilgi duyuyorum.
+          </p>
+          <p style="color:var(--text-secondary); margin-bottom:1.5rem;">
+            Boş zamanlarımda açık kaynak projelere katkı sağlamaktan, satranç oynamaktan
+            ve yeni teknolojiler öğrenmekten keyif alıyorum. TÜBİTAK projeleriyle
+            akademik çalışmalarıma devam ediyorum.
+          </p>
+
+          <!-- Bilgi kartları -->
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="card-dark" style="padding:16px; display:flex; align-items:center; gap:12px;">
+                <i class="bi bi-mortarboard-fill" style="color:var(--accent); font-size:1.3rem;"></i>
+                <div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Üniversite</div>
+                  <div style="font-weight:600; font-size:0.9rem;">Sakarya Üniversitesi</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card-dark" style="padding:16px; display:flex; align-items:center; gap:12px;">
+                <i class="bi bi-geo-alt-fill" style="color:var(--accent); font-size:1.3rem;"></i>
+                <div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Şehir</div>
+                  <div style="font-weight:600; font-size:0.9rem;">Sakarya / Bursa</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card-dark" style="padding:16px; display:flex; align-items:center; gap:12px;">
+                <i class="bi bi-envelope-fill" style="color:var(--accent); font-size:1.3rem;"></i>
+                <div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">E-posta</div>
+                  <div style="font-weight:600; font-size:0.88rem;">b231210091@sakarya.edu.tr</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card-dark" style="padding:16px; display:flex; align-items:center; gap:12px;">
+                <i class="bi bi-github" style="color:var(--accent); font-size:1.3rem;"></i>
+                <div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">GitHub</div>
+                  <a href="https://github.com/" target="_blank"
+                    style="color:var(--accent); font-weight:600; font-size:0.9rem; text-decoration:none;">
+                    github.com/kullaniciadi
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div class="col-lg-5">
+          <div class="accent-line" style="margin-left:0;"></div>
+          <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:1rem; color:var(--text-secondary);">
+            <i class="bi bi-play-circle me-2" style="color:var(--accent);"></i>Tanıtım Videosu
+          </h3>
+          <div class="video-wrap">
+            <!-- Sakarya Üniversitesi tanıtım videosu -->
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Tanıtım Videosu"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.8rem; margin-top:0.8rem; text-align:center;">
+            * Kendi tanıtım videonuzun YouTube linkini buraya ekleyebilirsiniz.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ================ /HAKKIMDA İÇERİK ============== -->
+
+
+  <!-- ==================== HOBİLER =================== -->
+  <section>
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="accent-line mx-auto"></div>
+        <h2 class="section-title">Hobiler &amp; İlgi Alanları</h2>
+        <p class="section-subtitle">Boş zamanlarımda neler yapıyorum?</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="hobby-card">
+            <span class="hobby-emoji">♟️</span>
+            <div class="hobby-title">Satranç</div>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin:0;">
+              Strateji ve analiz gerektiren bu oyunu lise yıllarından beri oynuyorum.
+            </p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="hobby-card">
+            <span class="hobby-emoji">💻</span>
+            <div class="hobby-title">Yazılım</div>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin:0;">
+              Python, JavaScript ve AI projeleri geliştirmek benim için hem iş hem hobi.
+            </p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="hobby-card">
+            <span class="hobby-emoji">📚</span>
+            <div class="hobby-title">Kitap Okuma</div>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin:0;">
+              Teknoloji, bilim kurgu ve kişisel gelişim kitapları okumaktan keyif alıyorum.
+            </p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="hobby-card">
+            <span class="hobby-emoji">🔬</span>
+            <div class="hobby-title">Araştırma</div>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin:0;">
+              TÜBİTAK projeleri ve akademik çalışmalar aracılığıyla bilime katkı sağlıyorum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ================== /HOBİLER ==================== -->
+
+
+  <!-- ==================== ETKİNLİKLER =============== -->
+  <section style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="accent-line mx-auto"></div>
+        <h2 class="section-title">Etkinlikler &amp; Deneyimler</h2>
+        <p class="section-subtitle">Katıldığım etkinlikler ve aldığım sorumluluklar</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card-dark h-100">
+            <div class="card-icon"><i class="bi bi-trophy-fill"></i></div>
+            <h3 class="card-title">TÜBİTAK 2209-A</h3>
+            <p class="card-text">
+              Uyku hali tespiti üzerine görüntü işleme projesi geliştirdim.
+              Python ve OpenCV kullanarak sürücü güvenliği sistemi tasarladım.
+            </p>
+            <div class="mt-2">
+              <span class="tech-tag">2024</span>
+              <span class="tech-tag">Python</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-dark h-100">
+            <div class="card-icon"><i class="bi bi-people-fill"></i></div>
+            <h3 class="card-title">Satranç Kulübü</h3>
+            <p class="card-text">
+              Lise yıllarında satranç kulübünü kurdum ve 3 yıl boyunca başkanlık yaptım.
+              Bölgesel turnuvalarda takımımı temsil ettim.
+            </p>
+            <div class="mt-2">
+              <span class="tech-tag">2020–2023</span>
+              <span class="tech-tag">Liderlik</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-dark h-100">
+            <div class="card-icon"><i class="bi bi-laptop-fill"></i></div>
+            <h3 class="card-title">Web Projeleri</h3>
+            <p class="card-text">
+              Üniversite sürecinde HTML, CSS, JavaScript ve PHP kullanarak
+              çeşitli web uygulamaları geliştirdim ve GitHub'da paylaştım.
+            </p>
+            <div class="mt-2">
+              <span class="tech-tag">Süregelen</span>
+              <span class="tech-tag">Web</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ================== /ETKİNLİKLER ================ -->
+
+
+  <!-- =================== HIZLI LİNKLER ============== -->
+  <section>
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="accent-line mx-auto"></div>
+        <h2 class="section-title">Sayfalar</h2>
+        <p class="section-subtitle">Sitemin diğer bölümlerini keşfedin</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <a href="cv.html" class="text-decoration-none">
+            <div class="card-dark text-center" style="padding:28px 20px;">
+              <i class="bi bi-file-earmark-text fs-1" style="color:var(--accent);"></i>
+              <div class="card-title mt-3">CV</div>
+              <div class="card-text">Eğitim ve becerilerim</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <a href="sehrim.html" class="text-decoration-none">
+            <div class="card-dark text-center" style="padding:28px 20px;">
+              <i class="bi bi-geo-alt fs-1" style="color:var(--accent);"></i>
+              <div class="card-title mt-3">Şehrim</div>
+              <div class="card-text">Bursa tanıtımı</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <a href="ilgialanlarim.html" class="text-decoration-none">
+            <div class="card-dark text-center" style="padding:28px 20px;">
+              <i class="bi bi-stars fs-1" style="color:var(--accent);"></i>
+              <div class="card-title mt-3">İlgi Alanlarım</div>
+              <div class="card-text">Satranç & Chess.com API</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <a href="iletisim.html" class="text-decoration-none">
+            <div class="card-dark text-center" style="padding:28px 20px;">
+              <i class="bi bi-envelope fs-1" style="color:var(--accent);"></i>
+              <div class="card-title mt-3">İletişim</div>
+              <div class="card-text">Bana ulaşın</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ================= /HIZLI LİNKLER =============== -->
+
+</div><!-- /page-wrapper -->
+
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <div class="footer-brand">Betül Gümüş</div>
+        <div class="footer-desc">Web Teknolojileri Ödevi · Sakarya Üniversitesi · 2024–2025</div>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="https://github.com/" target="_blank" class="social-link me-2" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="mailto:b231210091@sakarya.edu.tr" class="social-link" aria-label="E-posta">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2024 Betül Gümüş — Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+<!-- =================== /FOOTER ==================== -->
+
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
