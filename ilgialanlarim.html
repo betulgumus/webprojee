@@ -1,286 +1,297 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Betül Gümüş ilgi alanları - Satranç ve Chess.com API entegrasyonu ile günlük satranç bulmacaları." />
+  <meta name="description"
+    content="Betül Gümüş ilgi alanları - Satranç ve Chess.com API entegrasyonu ile günlük satranç bulmacaları." />
   <title>İlgi Alanlarım | Betül Gümüüş</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-      <div class="brand-logo">BG</div>
-      <span class="brand-text">Betül Gümüş</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Menüyü Aç">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-center gap-1">
-        <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
-        <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
-        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
-        <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
-        <li class="nav-item"><a class="nav-link active" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
-        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
-        <li class="nav-item"><a class="nav-link nav-login ms-2" href="login.html">Giriş Yap</a></li>
-      </ul>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <div class="brand-logo">BG</div>
+        <span class="brand-text">Betül Gümüş</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Menüyü Aç">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+          <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+          <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+          <li class="nav-item"><a class="nav-link" href="miras.html">Mirasımız</a></li>
+          <li class="nav-item"><a class="nav-link active" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+          <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+          <li class="nav-item"><a class="nav-link nav-login ms-2" href="login.html">Giriş Yap</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header
+      style="background: linear-gradient(135deg, var(--bg-primary) 0%, #0a1628 100%); padding: 70px 0 50px; text-align:center;">
+      <div class="container">
+        <div class="accent-line mx-auto"></div>
+        <h1 class="section-title">İlgi Alanlarım</h1>
+        <p class="section-subtitle">Satranç tutkusu · Chess.com API verilerinden canlı bilgiler</p>
+        <div class="hero-badge mx-auto" style="display:inline-flex;">
+          <i class="bi bi-plug-fill"></i> Chess.com Public API Entegrasyonu
+        </div>
+      </div>
+    </header>
+
+    <!-- İLGİ ALANLARI ÖZET -->
+    <section style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="row g-4 mb-5">
+          <div class="col-sm-6 col-lg-3">
+            <div class="card-dark text-center">
+              <div style="font-size:2.5rem; margin-bottom:0.8rem;">♟️</div>
+              <div class="card-title">Satranç</div>
+              <div class="card-text">Strateji, sabır ve derin analiz gerektiren bu oyunu çocukluktan beri oynuyorum.
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card-dark text-center">
+              <div style="font-size:2.5rem; margin-bottom:0.8rem;">🏀</div>
+              <div class="card-title">Basketbol</div>
+              <div class="card-text">Takım ruhu, hız ve koordinasyon. Basketbol bana liderlik becerisi kazandırdı.</div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card-dark text-center">
+              <div style="font-size:2.5rem; margin-bottom:0.8rem;">💻</div>
+              <div class="card-title">Yazılım</div>
+              <div class="card-text">Python, JavaScript ve AI projeleri geliştirmek benim için hem iş hem hobi.</div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card-dark text-center">
+              <div style="font-size:2.5rem; margin-bottom:0.8rem;">🔬</div>
+              <div class="card-title">Araştırma</div>
+              <div class="card-text">TÜBİTAK projeleri ve akademik çalışmalar aracılığıyla bilim dünyasına katkı
+                sağlıyorum.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHESS.COM API - GÜNLÜK BULMAÇA -->
+    <section id="api-bolum">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="accent-line mx-auto"></div>
+          <h2 class="section-title">Günlük Satranç Bulmacası</h2>
+          <p class="section-subtitle">Chess.com API'sinden canlı çekilen günün bulmacası</p>
+        </div>
+
+        <!-- Yükleniyor -->
+        <div id="puzzleLoading" class="text-center py-5">
+          <div class="spinner-border spinner-gold" role="status" aria-label="Yükleniyor">
+            <span class="visually-hidden">Yükleniyor...</span>
+          </div>
+          <p style="color:var(--text-muted); margin-top:12px;">Chess.com'dan veri çekiliyor...</p>
+        </div>
+
+        <!-- Bulmaça Kartı -->
+        <div id="puzzleCard" style="display:none;" class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="puzzle-board">
+              <div class="hero-badge mx-auto mb-3" style="display:inline-flex;">
+                <i class="bi bi-trophy-fill"></i> Günün Bulmacası
+              </div>
+              <div id="puzzleImg" class="mb-4"></div>
+              <h3 id="puzzleTitle" style="color:var(--accent); font-size:1.3rem; margin-bottom:0.5rem;"></h3>
+              <p id="puzzleDesc" style="color:var(--text-secondary); margin-bottom:1.5rem;"></p>
+              <div class="row g-3" id="puzzleInfo"></div>
+              <div class="mt-4">
+                <a id="puzzleLink" href="#" target="_blank" class="btn-gold text-decoration-none" rel="noopener">
+                  <i class="bi bi-box-arrow-up-right"></i> Chess.com'da Oyna
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hata Mesajı -->
+        <div id="puzzleError" style="display:none;" class="text-center py-4">
+          <div style="font-size:3rem; margin-bottom:1rem;">⚠️</div>
+          <p style="color:var(--text-secondary);">API'den veri alınamadı. CORS veya ağ kısıtlaması olabilir.</p>
+          <p style="color:var(--text-muted); font-size:0.85rem;">Aşağıdaki örnek satranç içerikleri gösterilmektedir.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SATRANÇ LİDERBORD API -->
+    <section id="leaderboard" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="accent-line mx-auto"></div>
+          <h2 class="section-title">Dünya Satranç Liderleri</h2>
+          <p class="section-subtitle">Chess.com Bullet kategorisi — API'den canlı veri</p>
+        </div>
+
+        <div id="leaderLoading" class="text-center py-4">
+          <div class="spinner-border spinner-gold" role="status" aria-label="Yükleniyor">
+            <span class="visually-hidden">Yükleniyor...</span>
+          </div>
+        </div>
+
+        <div id="leaderGrid" class="row g-4" style="display:none;"></div>
+
+        <div id="leaderError" style="display:none;" class="text-center py-4">
+          <p style="color:var(--text-muted);">Liderlik tablosu yüklenemedi.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SATRANÇ HAKKINDA -->
+    <section id="satranc-bilgi">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="accent-line mx-auto"></div>
+          <h2 class="section-title">Satranç Hakkında</h2>
+          <p class="section-subtitle">Bu kadim oyunun faydaları ve tarihi</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="api-card">
+              <div class="api-card-body">
+                <div style="font-size:1.8rem; margin-bottom:0.8rem;">🧠</div>
+                <div class="api-card-title">Beyin Gücü</div>
+                <div class="api-card-text">Satranç, analitik düşünme, hafıza ve konsantrasyon becerilerini güçlendirir.
+                  Düzenli oynayan kişilerde akademik başarı artışı gözlemlenir.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="api-card">
+              <div class="api-card-body">
+                <div style="font-size:1.8rem; margin-bottom:0.8rem;">📖</div>
+                <div class="api-card-title">Tarih</div>
+                <div class="api-card-text">6. yüzyılda Hindistan'da ortaya çıkan satranç, bugün 600 milyondan fazla
+                  aktif oyuncusuyla dünyanın en popüler zihin oyunudur.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="api-card">
+              <div class="api-card-body">
+                <div style="font-size:1.8rem; margin-bottom:0.8rem;">🏆</div>
+                <div class="api-card-title">Turnuvalar</div>
+                <div class="api-card-text">FIDE Dünya Şampiyonası, Chess Olympiad ve çeşitli online turnuvalar dünya
+                  genelinde milyonlarca oyuncuyu bir araya getirir.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
-</nav>
 
-<div class="page-wrapper">
-
-  <!-- HEADER -->
-  <header style="background: linear-gradient(135deg, var(--bg-primary) 0%, #0a1628 100%); padding: 70px 0 50px; text-align:center;">
+  <!-- FOOTER -->
+  <footer>
     <div class="container">
-      <div class="accent-line mx-auto"></div>
-      <h1 class="section-title">İlgi Alanlarım</h1>
-      <p class="section-subtitle">Satranç tutkusu · Chess.com API verilerinden canlı bilgiler</p>
-      <div class="hero-badge mx-auto" style="display:inline-flex;">
-        <i class="bi bi-plug-fill"></i> Chess.com Public API Entegrasyonu
-      </div>
+      <p class="footer-copy">© 2024 Betül Gümüş · Web Programlama Projesi · Chess.com Public API Kullanılmıştır</p>
     </div>
-  </header>
+  </footer>
 
-  <!-- İLGİ ALANLARI ÖZET -->
-  <section style="background: var(--bg-secondary);">
-    <div class="container">
-      <div class="row g-4 mb-5">
-        <div class="col-sm-6 col-lg-3">
-          <div class="card-dark text-center">
-            <div style="font-size:2.5rem; margin-bottom:0.8rem;">♟️</div>
-            <div class="card-title">Satranç</div>
-            <div class="card-text">Strateji, sabır ve derin analiz gerektiren bu oyunu çocukluktan beri oynuyorum.</div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="card-dark text-center">
-            <div style="font-size:2.5rem; margin-bottom:0.8rem;">🏀</div>
-            <div class="card-title">Basketbol</div>
-            <div class="card-text">Takım ruhu, hız ve koordinasyon. Basketbol bana liderlik becerisi kazandırdı.</div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="card-dark text-center">
-            <div style="font-size:2.5rem; margin-bottom:0.8rem;">💻</div>
-            <div class="card-title">Yazılım</div>
-            <div class="card-text">Python, JavaScript ve AI projeleri geliştirmek benim için hem iş hem hobi.</div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="card-dark text-center">
-            <div style="font-size:2.5rem; margin-bottom:0.8rem;">🔬</div>
-            <div class="card-title">Araştırma</div>
-            <div class="card-text">TÜBİTAK projeleri ve akademik çalışmalar aracılığıyla bilim dünyasına katkı sağlıyorum.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    /* ---- Chess.com API Entegrasyonu ---- */
+    (function () {
 
-  <!-- CHESS.COM API - GÜNLÜK BULMAÇA -->
-  <section id="api-bolum">
-    <div class="container">
-      <div class="text-center mb-5">
-        <div class="accent-line mx-auto"></div>
-        <h2 class="section-title">Günlük Satranç Bulmacası</h2>
-        <p class="section-subtitle">Chess.com API'sinden canlı çekilen günün bulmacası</p>
-      </div>
+      /* -- Günlük Bulmaça -- */
+      fetch('https://api.chess.com/pub/puzzle', {
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(data => {
+          document.getElementById('puzzleLoading').style.display = 'none';
+          document.getElementById('puzzleCard').style.display = 'block';
 
-      <!-- Yükleniyor -->
-      <div id="puzzleLoading" class="text-center py-5">
-        <div class="spinner-border spinner-gold" role="status" aria-label="Yükleniyor">
-          <span class="visually-hidden">Yükleniyor...</span>
-        </div>
-        <p style="color:var(--text-muted); margin-top:12px;">Chess.com'dan veri çekiliyor...</p>
-      </div>
+          const title = document.getElementById('puzzleTitle');
+          const desc = document.getElementById('puzzleDesc');
+          const imgEl = document.getElementById('puzzleImg');
+          const link = document.getElementById('puzzleLink');
+          const info = document.getElementById('puzzleInfo');
 
-      <!-- Bulmaça Kartı -->
-      <div id="puzzleCard" style="display:none;" class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="puzzle-board">
-            <div class="hero-badge mx-auto mb-3" style="display:inline-flex;">
-              <i class="bi bi-trophy-fill"></i> Günün Bulmacası
-            </div>
-            <div id="puzzleImg" class="mb-4"></div>
-            <h3 id="puzzleTitle" style="color:var(--accent); font-size:1.3rem; margin-bottom:0.5rem;"></h3>
-            <p id="puzzleDesc" style="color:var(--text-secondary); margin-bottom:1.5rem;"></p>
-            <div class="row g-3" id="puzzleInfo"></div>
-            <div class="mt-4">
-              <a id="puzzleLink" href="#" target="_blank" class="btn-gold text-decoration-none" rel="noopener">
-                <i class="bi bi-box-arrow-up-right"></i> Chess.com'da Oyna
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+          title.textContent = data.title || 'Günün Satranç Bulmacası';
+          desc.textContent = data.pgn
+            ? 'Hamleleri analiz ederek doğru cevabı bulmaya çalışın!'
+            : 'Chess.com\'un günlük bulmacasını çözerek satranç becerilerinizi test edin.';
 
-      <!-- Hata Mesajı -->
-      <div id="puzzleError" style="display:none;" class="text-center py-4">
-        <div style="font-size:3rem; margin-bottom:1rem;">⚠️</div>
-        <p style="color:var(--text-secondary);">API'den veri alınamadı. CORS veya ağ kısıtlaması olabilir.</p>
-        <p style="color:var(--text-muted); font-size:0.85rem;">Aşağıdaki örnek satranç içerikleri gösterilmektedir.</p>
-      </div>
+          if (data.image) {
+            imgEl.innerHTML = `<img src="${data.image}" alt="Satranç Bulmaca Tahtası" class="img-fluid" style="border-radius:var(--radius); max-height:300px; border:1px solid var(--border);" />`;
+          } else {
+            imgEl.innerHTML = `<div style="font-size:5rem; padding:30px;">♟️</div>`;
+          }
 
-    </div>
-  </section>
+          const url = data.url || 'https://www.chess.com/puzzles';
+          link.href = url;
 
-  <!-- SATRANÇ LİDERBORD API -->
-  <section id="leaderboard" style="background: var(--bg-secondary);">
-    <div class="container">
-      <div class="text-center mb-5">
-        <div class="accent-line mx-auto"></div>
-        <h2 class="section-title">Dünya Satranç Liderleri</h2>
-        <p class="section-subtitle">Chess.com Bullet kategorisi — API'den canlı veri</p>
-      </div>
-
-      <div id="leaderLoading" class="text-center py-4">
-        <div class="spinner-border spinner-gold" role="status" aria-label="Yükleniyor">
-          <span class="visually-hidden">Yükleniyor...</span>
-        </div>
-      </div>
-
-      <div id="leaderGrid" class="row g-4" style="display:none;"></div>
-
-      <div id="leaderError" style="display:none;" class="text-center py-4">
-        <p style="color:var(--text-muted);">Liderlik tablosu yüklenemedi.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SATRANÇ HAKKINDA -->
-  <section id="satranc-bilgi">
-    <div class="container">
-      <div class="text-center mb-5">
-        <div class="accent-line mx-auto"></div>
-        <h2 class="section-title">Satranç Hakkında</h2>
-        <p class="section-subtitle">Bu kadim oyunun faydaları ve tarihi</p>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="api-card">
-            <div class="api-card-body">
-              <div style="font-size:1.8rem; margin-bottom:0.8rem;">🧠</div>
-              <div class="api-card-title">Beyin Gücü</div>
-              <div class="api-card-text">Satranç, analitik düşünme, hafıza ve konsantrasyon becerilerini güçlendirir. Düzenli oynayan kişilerde akademik başarı artışı gözlemlenir.</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="api-card">
-            <div class="api-card-body">
-              <div style="font-size:1.8rem; margin-bottom:0.8rem;">📖</div>
-              <div class="api-card-title">Tarih</div>
-              <div class="api-card-text">6. yüzyılda Hindistan'da ortaya çıkan satranç, bugün 600 milyondan fazla aktif oyuncusuyla dünyanın en popüler zihin oyunudur.</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="api-card">
-            <div class="api-card-body">
-              <div style="font-size:1.8rem; margin-bottom:0.8rem;">🏆</div>
-              <div class="api-card-title">Turnuvalar</div>
-              <div class="api-card-text">FIDE Dünya Şampiyonası, Chess Olympiad ve çeşitli online turnuvalar dünya genelinde milyonlarca oyuncuyu bir araya getirir.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <p class="footer-copy">© 2024 Betül Gümüş · Web Programlama Projesi · Chess.com Public API Kullanılmıştır</p>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
-<script>
-/* ---- Chess.com API Entegrasyonu ---- */
-(function () {
-
-  /* -- Günlük Bulmaça -- */
-  fetch('https://api.chess.com/pub/puzzle', {
-    headers: { 'Accept': 'application/json' }
-  })
-    .then(res => {
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      return res.json();
-    })
-    .then(data => {
-      document.getElementById('puzzleLoading').style.display = 'none';
-      document.getElementById('puzzleCard').style.display = 'block';
-
-      const title = document.getElementById('puzzleTitle');
-      const desc = document.getElementById('puzzleDesc');
-      const imgEl = document.getElementById('puzzleImg');
-      const link = document.getElementById('puzzleLink');
-      const info = document.getElementById('puzzleInfo');
-
-      title.textContent = data.title || 'Günün Satranç Bulmacası';
-      desc.textContent = data.pgn
-        ? 'Hamleleri analiz ederek doğru cevabı bulmaya çalışın!'
-        : 'Chess.com\'un günlük bulmacasını çözerek satranç becerilerinizi test edin.';
-
-      if (data.image) {
-        imgEl.innerHTML = `<img src="${data.image}" alt="Satranç Bulmaca Tahtası" class="img-fluid" style="border-radius:var(--radius); max-height:300px; border:1px solid var(--border);" />`;
-      } else {
-        imgEl.innerHTML = `<div style="font-size:5rem; padding:30px;">♟️</div>`;
-      }
-
-      const url = data.url || 'https://www.chess.com/puzzles';
-      link.href = url;
-
-      if (data.pgn) {
-        info.innerHTML = `
+          if (data.pgn) {
+            info.innerHTML = `
           <div class="col-12">
             <div class="card-dark" style="text-align:left;">
               <div style="color:var(--text-muted); font-size:0.78rem; margin-bottom:6px; text-transform:uppercase; letter-spacing:1px;">PGN (Oyun Notasyonu)</div>
               <code style="color:var(--accent); font-size:0.82rem; word-break:break-all; white-space:pre-wrap; display:block; max-height:120px; overflow-y:auto;">${data.pgn.substring(0, 300)}${data.pgn.length > 300 ? '...' : ''}</code>
             </div>
           </div>`;
-      }
-    })
-    .catch(() => {
-      document.getElementById('puzzleLoading').style.display = 'none';
-      document.getElementById('puzzleError').style.display = 'block';
-    });
+          }
+        })
+        .catch(() => {
+          document.getElementById('puzzleLoading').style.display = 'none';
+          document.getElementById('puzzleError').style.display = 'block';
+        });
 
-  /* -- Liderlik Tablosu -- */
-  fetch('https://api.chess.com/pub/leaderboards', {
-    headers: { 'Accept': 'application/json' }
-  })
-    .then(res => {
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      return res.json();
-    })
-    .then(data => {
-      document.getElementById('leaderLoading').style.display = 'none';
-      const grid = document.getElementById('leaderGrid');
-      grid.style.display = 'flex';
-      grid.style.flexWrap = 'wrap';
+      /* -- Liderlik Tablosu -- */
+      fetch('https://api.chess.com/pub/leaderboards', {
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(data => {
+          document.getElementById('leaderLoading').style.display = 'none';
+          const grid = document.getElementById('leaderGrid');
+          grid.style.display = 'flex';
+          grid.style.flexWrap = 'wrap';
 
-      const players = (data.live_bullet || data.live_blitz || []).slice(0, 8);
+          const players = (data.live_bullet || data.live_blitz || []).slice(0, 8);
 
-      if (!players.length) throw new Error('Boş');
+          if (!players.length) throw new Error('Boş');
 
-      players.forEach((player, i) => {
-        const medals = ['🥇', '🥈', '🥉'];
-        const medal = i < 3 ? medals[i] : `#${i + 1}`;
-        const div = document.createElement('div');
-        div.className = 'col-sm-6 col-lg-3';
-        div.innerHTML = `
+          players.forEach((player, i) => {
+            const medals = ['🥇', '🥈', '🥉'];
+            const medal = i < 3 ? medals[i] : `#${i + 1}`;
+            const div = document.createElement('div');
+            div.className = 'col-sm-6 col-lg-3';
+            div.innerHTML = `
           <div class="api-card">
             <div class="api-card-body">
               <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
@@ -296,15 +307,16 @@
               </p>
             </div>
           </div>`;
-        grid.appendChild(div);
-      });
-    })
-    .catch(() => {
-      document.getElementById('leaderLoading').style.display = 'none';
-      document.getElementById('leaderError').style.display = 'block';
-    });
+            grid.appendChild(div);
+          });
+        })
+        .catch(() => {
+          document.getElementById('leaderLoading').style.display = 'none';
+          document.getElementById('leaderError').style.display = 'block';
+        });
 
-})();
-</script>
+    })();
+  </script>
 </body>
+
 </html>

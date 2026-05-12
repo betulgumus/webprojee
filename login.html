@@ -23,7 +23,7 @@
 
           <!-- Başlık -->
           <h1 class="login-title">Giriş Yap</h1>
-          <p class="login-sub">Öğrenci numaranız ve şifrenizle giriş yapın</p>
+          <p class="login-sub">Öğrenci numaranı z ve şifrenizle giriş yapın</p>
 
           <!-- Hata Mesajı (URL'den ?hata= parametresiyle) -->
           <div id="hataMesaji" class="error-banner" style="display:none;">
@@ -184,6 +184,12 @@ function loginDogrula() {
     const jsHata = document.getElementById('jsHata');
     jsHata.style.display = 'flex';
     document.getElementById('jsHataMetin').textContent = 'Lütfen alanları doğru şekilde doldurun!';
+    return;
+  }
+
+  // Eğer proje file:// protokolü ile açılmışsa PHP çalışmaz, kullanıcıyı uyar.
+  if (window.location.protocol === 'file:') {
+    alert("HATA: Projeyi masaüstünden çift tıklayarak (file://) açtığınız için PHP dosyaları çalışmaz ve giriş ekranı tepki vermez. Lütfen XAMPP/WAMP gibi bir yerel sunucu kullanın ve projeyi 'http://localhost/...' üzerinden açın.");
     return;
   }
 

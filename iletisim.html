@@ -299,7 +299,13 @@ function dogrulaJS() {
   if (gecerli) {
     alertEl.className = 'alert-dark alert-success-dark';
     alertEl.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i> <strong>Native JS:</strong> Form doğrulandı! Gönderiliyor...';
-    setTimeout(() => { document.getElementById('iletisimForm').submit(); }, 800);
+    setTimeout(() => { 
+      if (window.location.protocol === 'file:') {
+        alert("HATA: Projeyi masaüstünden çift tıklayarak (file://) açtığınız için form_isle.php dosyasına veri gönderilemez ve sayfa tepki vermez. Lütfen projeyi XAMPP/WAMP klasörüne (htdocs) atarak 'http://localhost/...' üzerinden çalıştırın.");
+      } else {
+        document.getElementById('iletisimForm').submit(); 
+      }
+    }, 800);
   } else {
     alertEl.className = 'alert-dark alert-error-dark';
     alertEl.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-2"></i> <strong>Native JS:</strong> Lütfen kırmızıyla işaretlenmiş alanları düzeltin.';
@@ -369,7 +375,13 @@ function dogrulaVue() {
     alertEl.className = 'alert-dark alert-success-dark';
     alertEl.innerHTML = `<i class="bi bi-check-circle-fill me-2"></i>
       <strong>Vue.js:</strong> Reaktif doğrulama başarılı! ${hatalar.length} hata yok. Gönderiliyor...`;
-    setTimeout(() => { document.getElementById('iletisimForm').submit(); }, 800);
+    setTimeout(() => { 
+      if (window.location.protocol === 'file:') {
+        alert("HATA: Projeyi masaüstünden çift tıklayarak (file://) açtığınız için form_isle.php dosyasına veri gönderilemez ve sayfa tepki vermez. Lütfen projeyi XAMPP/WAMP klasörüne (htdocs) atarak 'http://localhost/...' üzerinden çalıştırın.");
+      } else {
+        document.getElementById('iletisimForm').submit(); 
+      }
+    }, 800);
   } else {
     alertEl.className = 'alert-dark alert-error-dark';
     alertEl.innerHTML = `<i class="bi bi-exclamation-triangle-fill me-2"></i>
