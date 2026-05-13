@@ -74,7 +74,7 @@ $konuGorunum = $konuEtiketleri[$konu] ?? $konu;
 
           <!-- Başarı Başlığı -->
           <div class="text-center mb-5">
-            <div style="font-size:4rem; margin-bottom:1rem;">✅</div>
+            <div style="font-size:4rem; margin-bottom:1rem;"><i class="bi bi-check-circle-fill" style="color: #10b981;"></i></div>
             <h1 class="section-title">Form Başarıyla Alındı!</h1>
             <p style="color:var(--text-secondary);">
               Mesajınız sunucu tarafında işlendi. Aşağıda gönderdiğiniz bilgiler listelenmiştir.
@@ -84,7 +84,7 @@ $konuGorunum = $konuEtiketleri[$konu] ?? $konu;
           <!-- Gönderilen Veriler -->
           <div class="output-section">
             <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--border);">
-              <div style="width:44px; height:44px; background:rgba(245,158,11,0.15); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">📋</div>
+              <div style="width:44px; height:44px; background:rgba(245,158,11,0.15); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.2rem;"><i class="bi bi-clipboard2-check-fill" style="color:var(--accent);"></i></div>
               <div>
                 <div style="font-weight:700; font-size:1rem;">Gönderilen Form Verileri</div>
                 <div style="color:var(--text-muted); font-size:0.82rem;"><?php echo $tarih; ?> tarihinde alındı</div>

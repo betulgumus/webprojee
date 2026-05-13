@@ -60,7 +60,7 @@
         <div class="row g-4 mb-5">
           <div class="col-sm-6 col-lg-3">
             <div class="card-dark text-center">
-              <div style="font-size:2.5rem; margin-bottom:0.8rem;">♟️</div>
+              <i class="bi bi-puzzle" style="font-size:2.5rem; margin-bottom:0.8rem; display:block; color:var(--accent);"></i>
               <div class="card-title">Satranç</div>
               <div class="card-text">Strateji, sabır ve derin analiz gerektiren bu oyunu çocukluktan beri oynuyorum.
               </div>
@@ -68,21 +68,21 @@
           </div>
           <div class="col-sm-6 col-lg-3">
             <div class="card-dark text-center">
-              <div style="font-size:2.5rem; margin-bottom:0.8rem;">🏀</div>
+              <i class="bi bi-dribbble" style="font-size:2.5rem; margin-bottom:0.8rem; display:block; color:var(--accent);"></i>
               <div class="card-title">Basketbol</div>
               <div class="card-text">Takım ruhu, hız ve koordinasyon. Basketbol bana liderlik becerisi kazandırdı.</div>
             </div>
           </div>
           <div class="col-sm-6 col-lg-3">
             <div class="card-dark text-center">
-              <div style="font-size:2.5rem; margin-bottom:0.8rem;">💻</div>
+              <i class="bi bi-laptop" style="font-size:2.5rem; margin-bottom:0.8rem; display:block; color:var(--accent);"></i>
               <div class="card-title">Yazılım</div>
               <div class="card-text">Python, JavaScript ve AI projeleri geliştirmek benim için hem iş hem hobi.</div>
             </div>
           </div>
           <div class="col-sm-6 col-lg-3">
             <div class="card-dark text-center">
-              <div style="font-size:2.5rem; margin-bottom:0.8rem;">🔬</div>
+              <i class="bi bi-binoculars" style="font-size:2.5rem; margin-bottom:0.8rem; display:block; color:var(--accent);"></i>
               <div class="card-title">Araştırma</div>
               <div class="card-text">TÜBİTAK projeleri ve akademik çalışmalar aracılığıyla bilim dünyasına katkı
                 sağlıyorum.</div>
@@ -131,7 +131,7 @@
 
         <!-- Hata Mesajı -->
         <div id="puzzleError" style="display:none;" class="text-center py-4">
-          <div style="font-size:3rem; margin-bottom:1rem;">⚠️</div>
+          <i class="bi bi-exclamation-triangle-fill" style="font-size:3rem; margin-bottom:1rem; display:block; color:#f59e0b;"></i>
           <p style="color:var(--text-secondary);">API'den veri alınamadı. CORS veya ağ kısıtlaması olabilir.</p>
           <p style="color:var(--text-muted); font-size:0.85rem;">Aşağıdaki örnek satranç içerikleri gösterilmektedir.
           </p>
@@ -175,7 +175,7 @@
           <div class="col-md-4">
             <div class="api-card">
               <div class="api-card-body">
-                <div style="font-size:1.8rem; margin-bottom:0.8rem;">🧠</div>
+                <i class="bi bi-lightning-charge-fill" style="font-size:1.8rem; margin-bottom:0.8rem; display:block; color:var(--accent);"></i>
                 <div class="api-card-title">Beyin Gücü</div>
                 <div class="api-card-text">Satranç, analitik düşünme, hafıza ve konsantrasyon becerilerini güçlendirir.
                   Düzenli oynayan kişilerde akademik başarı artışı gözlemlenir.</div>
@@ -185,7 +185,7 @@
           <div class="col-md-4">
             <div class="api-card">
               <div class="api-card-body">
-                <div style="font-size:1.8rem; margin-bottom:0.8rem;">📖</div>
+                <i class="bi bi-book-fill" style="font-size:1.8rem; margin-bottom:0.8rem; display:block; color:var(--accent);"></i>
                 <div class="api-card-title">Tarih</div>
                 <div class="api-card-text">6. yüzyılda Hindistan'da ortaya çıkan satranç, bugün 600 milyondan fazla
                   aktif oyuncusuyla dünyanın en popüler zihin oyunudur.</div>
@@ -195,7 +195,7 @@
           <div class="col-md-4">
             <div class="api-card">
               <div class="api-card-body">
-                <div style="font-size:1.8rem; margin-bottom:0.8rem;">🏆</div>
+                <i class="bi bi-trophy-fill" style="font-size:1.8rem; margin-bottom:0.8rem; display:block; color:var(--accent);"></i>
                 <div class="api-card-title">Turnuvalar</div>
                 <div class="api-card-text">FIDE Dünya Şampiyonası, Chess Olympiad ve çeşitli online turnuvalar dünya
                   genelinde milyonlarca oyuncuyu bir araya getirir.</div>
@@ -247,7 +247,7 @@
           if (data.image) {
             imgEl.innerHTML = `<img src="${data.image}" alt="Satranç Bulmaca Tahtası" class="img-fluid" style="border-radius:var(--radius); max-height:300px; border:1px solid var(--border);" />`;
           } else {
-            imgEl.innerHTML = `<div style="font-size:5rem; padding:30px;">♟️</div>`;
+            imgEl.innerHTML = `<div style="font-size:5rem; padding:30px;"><i class="bi bi-puzzle"></i></div>`;
           }
 
           const url = data.url || 'https://www.chess.com/puzzles';
@@ -287,7 +287,7 @@
           if (!players.length) throw new Error('Boş');
 
           players.forEach((player, i) => {
-            const medals = ['🥇', '🥈', '🥉'];
+            const medals = ['<i class="bi bi-1-circle-fill text-warning"></i>', '<i class="bi bi-2-circle-fill text-secondary"></i>', '<i class="bi bi-3-circle-fill" style="color:#cd7f32;"></i>'];
             const medal = i < 3 ? medals[i] : `#${i + 1}`;
             const div = document.createElement('div');
             div.className = 'col-sm-6 col-lg-3';
@@ -302,8 +302,8 @@
                 </div>
               </div>
               <p class="api-card-text" style="font-size:0.8rem;">
-                ${player.country ? '🌍 ' + player.country.split('/').pop() : ''}
-                ${player.title ? ' · 🏆 ' + player.title : ''}
+                ${player.country ? '<i class="bi bi-globe2"></i> ' + player.country.split('/').pop() : ''}
+                ${player.title ? ' · <i class="bi bi-award-fill"></i> ' + player.title : ''}
               </p>
             </div>
           </div>`;
