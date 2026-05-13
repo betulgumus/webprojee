@@ -23,7 +23,26 @@
 
           <!-- Başlık -->
           <h1 class="login-title">Giriş Yap</h1>
-          <p class="login-sub">Öğrenci numaranı z ve şifrenizle giriş yapın</p>
+          <p class="login-sub">Öğrenci numaranız ve şifrenizle giriş yapın</p>
+
+          <!-- XAMPP Uyarısı (file:// protokolü tespit edilince gösterilir) -->
+          <div id="xamppUyari" style="display:none; background:linear-gradient(135deg,#1e3a5f,#0d2137); border:1px solid #f59e0b; border-radius:12px; padding:18px 20px; margin-bottom:1.2rem;">
+            <div style="display:flex; align-items:flex-start; gap:12px;">
+              <i class="bi bi-exclamation-triangle-fill" style="color:#f59e0b; font-size:1.4rem; flex-shrink:0; margin-top:2px;"></i>
+              <div>
+                <p style="color:#fbbf24; font-weight:700; margin:0 0 6px; font-size:0.95rem;">PHP Sunucusu Gerekli</p>
+                <p style="color:#cbd5e1; font-size:0.83rem; margin:0 0 10px; line-height:1.6;">
+                  Bu sayfayı doğrudan dosyadan açtınız (<code style="background:rgba(255,255,255,0.1);padding:1px 5px;border-radius:4px;">file://</code>). PHP dosyaları yalnızca bir web sunucusu üzerinden çalışır.
+                </p>
+                <p style="color:#94a3b8; font-size:0.8rem; margin:0; line-height:1.7;">
+                  <strong style="color:#e2e8f0;">XAMPP ile çalıştırma adımları:</strong><br>
+                  1. XAMPP Control Panel'i açın → <strong>Apache</strong>'yi başlatın.<br>
+                  2. Proje klasörünü <code style="background:rgba(255,255,255,0.1);padding:1px 5px;border-radius:4px;">C:\xampp\htdocs\web_odev</code> içine kopyalayın.<br>
+                  3. Tarayıcıda <code style="background:rgba(255,255,255,0.1);padding:1px 5px;border-radius:4px;">http://localhost/web_odev/login.html</code> adresini açın.
+                </p>
+              </div>
+            </div>
+          </div>
 
           <!-- Hata Mesajı (URL'den ?hata= parametresiyle) -->
           <div id="hataMesaji" class="error-banner" style="display:none;">
@@ -161,7 +180,7 @@ function loginDogrula() {
   const email = document.getElementById('loginEmail').value.trim();
   const sifre = document.getElementById('loginSifre').value.trim();
 
-  // E-posta format kontrolü — Sakarya formatı
+  // E-posta format kontrolü (Sakarya formatı)
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!email || !emailRegex.test(email)) {
     document.getElementById('err-login-email').classList.add('show');
@@ -187,13 +206,14 @@ function loginDogrula() {
     return;
   }
 
-  // Eğer proje file:// protokolü ile açılmışsa PHP çalışmaz, kullanıcıyı uyar.
+  // Proje file:// protokolü ile açılmışsa PHP çalışmaz — güzel uyarı göster
   if (window.location.protocol === 'file:') {
-    alert("HATA: Projeyi masaüstünden çift tıklayarak (file://) açtığınız için PHP dosyaları çalışmaz ve giriş ekranı tepki vermez. Lütfen XAMPP/WAMP gibi bir yerel sunucu kullanın ve projeyi 'http://localhost/...' üzerinden açın.");
+    document.getElementById('xamppUyari').style.display = 'block';
+    document.getElementById('xamppUyari').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     return;
   }
 
-  // Doğrulama geçti — formu PHP'ye gönder
+  // Doğrulama geçti — formu PHP'ye POST et (ödev şartı)
   document.getElementById('loginForm').submit();
 }
 

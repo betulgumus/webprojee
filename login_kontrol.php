@@ -5,6 +5,9 @@
    karşılaştırılır. Başarı: basari.php, Hata: login.html
    =================================================== */
 
+/* Session'ı her şeyden önce başlat */
+session_start();
+
 /* Yalnızca POST isteğini kabul et */
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: login.html');
@@ -28,8 +31,7 @@ if (empty($gelen_email) || empty($gelen_sifre)) {
 
 /* Kimlik doğrulama */
 if ($gelen_email === $dogru_email && $gelen_sifre === $dogru_sifre) {
-    /* Başarılı giriş */
-    session_start();
+    /* Başarılı giriş — session'a yaz ve yönlendir */
     $_SESSION['ogrenci_no'] = $ogrenci_no;
     $_SESSION['giris_tarihi'] = date('d.m.Y H:i:s');
     header('Location: basari.php');
