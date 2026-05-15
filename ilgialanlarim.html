@@ -18,7 +18,7 @@
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <div class="brand-logo">BG</div>
+
         <span class="brand-text">Betül Gümüş</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
@@ -47,10 +47,6 @@
       <div class="container">
         <div class="accent-line mx-auto"></div>
         <h1 class="section-title">İlgi Alanlarım</h1>
-        <p class="section-subtitle">Satranç tutkusu · Chess.com API verilerinden canlı bilgiler</p>
-        <div class="hero-badge mx-auto" style="display:inline-flex;">
-          <i class="bi bi-plug-fill"></i> Chess.com Public API Entegrasyonu
-        </div>
       </div>
     </header>
 
@@ -140,71 +136,46 @@
       </div>
     </section>
 
-    <!-- SATRANÇ LİDERBORD API -->
-    <section id="leaderboard" style="background: var(--bg-secondary);">
+    <!-- FİLM / DİZİ ÖNERİLERİ API -->
+    <section id="movies" style="background: var(--bg-secondary);">
       <div class="container">
         <div class="text-center mb-5">
           <div class="accent-line mx-auto"></div>
-          <h2 class="section-title">Dünya Satranç Liderleri</h2>
-          <p class="section-subtitle">Chess.com Bullet kategorisi — API'den canlı veri</p>
+          <h2 class="section-title">Günün Dizi Önerisi</h2>
+          <p class="section-subtitle">TVMaze API'sinden günün tavsiyesi</p>
         </div>
 
-        <div id="leaderLoading" class="text-center py-4">
+        <div id="movieLoading" class="text-center py-4">
           <div class="spinner-border spinner-gold" role="status" aria-label="Yükleniyor">
             <span class="visually-hidden">Yükleniyor...</span>
           </div>
         </div>
 
-        <div id="leaderGrid" class="row g-4" style="display:none;"></div>
+        <div id="movieCard" style="display:none;" class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="puzzle-board" style="text-align: center;">
+              <div class="hero-badge mx-auto mb-3" style="display:inline-flex;">
+                <i class="bi bi-film"></i> Yazılımcı Tavsiyesi
+              </div>
+              <div id="movieImg" class="mb-4"></div>
+              <h3 id="movieTitle" style="color:var(--accent); font-size:1.8rem; margin-bottom:0.5rem;"></h3>
+              <div id="movieDesc" style="color:var(--text-secondary); margin-bottom:1.5rem; font-size: 0.95rem; line-height: 1.6;"></div>
+              <div class="mt-4">
+                <a id="movieLink" href="#" target="_blank" class="btn-gold text-decoration-none" rel="noopener">
+                  <i class="bi bi-box-arrow-up-right"></i> TVMaze'de İncele
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div id="leaderError" style="display:none;" class="text-center py-4">
-          <p style="color:var(--text-muted);">Liderlik tablosu yüklenemedi.</p>
+        <div id="movieError" style="display:none;" class="text-center py-4">
+          <p style="color:var(--text-muted);">Veriler yüklenemedi.</p>
         </div>
       </div>
     </section>
 
-    <!-- SATRANÇ HAKKINDA -->
-    <section id="satranc-bilgi">
-      <div class="container">
-        <div class="text-center mb-5">
-          <div class="accent-line mx-auto"></div>
-          <h2 class="section-title">Satranç Hakkında</h2>
-          <p class="section-subtitle">Bu kadim oyunun faydaları ve tarihi</p>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="api-card">
-              <div class="api-card-body">
-                <i class="bi bi-lightning-charge-fill" style="font-size:1.8rem; margin-bottom:0.8rem; display:block; color:var(--accent);"></i>
-                <div class="api-card-title">Beyin Gücü</div>
-                <div class="api-card-text">Satranç, analitik düşünme, hafıza ve konsantrasyon becerilerini güçlendirir.
-                  Düzenli oynayan kişilerde akademik başarı artışı gözlemlenir.</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="api-card">
-              <div class="api-card-body">
-                <i class="bi bi-book-fill" style="font-size:1.8rem; margin-bottom:0.8rem; display:block; color:var(--accent);"></i>
-                <div class="api-card-title">Tarih</div>
-                <div class="api-card-text">6. yüzyılda Hindistan'da ortaya çıkan satranç, bugün 600 milyondan fazla
-                  aktif oyuncusuyla dünyanın en popüler zihin oyunudur.</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="api-card">
-              <div class="api-card-body">
-                <i class="bi bi-trophy-fill" style="font-size:1.8rem; margin-bottom:0.8rem; display:block; color:var(--accent);"></i>
-                <div class="api-card-title">Turnuvalar</div>
-                <div class="api-card-text">FIDE Dünya Şampiyonası, Chess Olympiad ve çeşitli online turnuvalar dünya
-                  genelinde milyonlarca oyuncuyu bir araya getirir.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
   </div>
 
@@ -268,51 +239,33 @@
           document.getElementById('puzzleError').style.display = 'block';
         });
 
-      /* -- Liderlik Tablosu -- */
-      fetch('https://api.chess.com/pub/leaderboards', {
-        headers: { 'Accept': 'application/json' }
-      })
+      /* -- Günün Dizi Önerisi (TVMaze) -- */
+      fetch('https://api.tvmaze.com/shows/143')
         .then(res => {
           if (!res.ok) throw new Error('HTTP ' + res.status);
           return res.json();
         })
         .then(data => {
-          document.getElementById('leaderLoading').style.display = 'none';
-          const grid = document.getElementById('leaderGrid');
-          grid.style.display = 'flex';
-          grid.style.flexWrap = 'wrap';
+          document.getElementById('movieLoading').style.display = 'none';
+          document.getElementById('movieCard').style.display = 'flex';
 
-          const players = (data.live_bullet || data.live_blitz || []).slice(0, 8);
+          const title = document.getElementById('movieTitle');
+          const desc = document.getElementById('movieDesc');
+          const imgEl = document.getElementById('movieImg');
+          const link = document.getElementById('movieLink');
 
-          if (!players.length) throw new Error('Boş');
+          title.textContent = data.name;
+          desc.innerHTML = data.summary ? data.summary : 'Bu dizi için açıklama bulunmamaktadır.';
 
-          players.forEach((player, i) => {
-            const medals = ['<i class="bi bi-1-circle-fill text-warning"></i>', '<i class="bi bi-2-circle-fill text-secondary"></i>', '<i class="bi bi-3-circle-fill" style="color:#cd7f32;"></i>'];
-            const medal = i < 3 ? medals[i] : `#${i + 1}`;
-            const div = document.createElement('div');
-            div.className = 'col-sm-6 col-lg-3';
-            div.innerHTML = `
-          <div class="api-card">
-            <div class="api-card-body">
-              <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
-                <span style="font-size:1.4rem;">${medal}</span>
-                <div>
-                  <div class="api-card-title">${player.username || 'Oyuncu'}</div>
-                  <span class="api-badge">${player.score || player.rating || '—'} puan</span>
-                </div>
-              </div>
-              <p class="api-card-text" style="font-size:0.8rem;">
-                ${player.country ? '<i class="bi bi-globe2"></i> ' + player.country.split('/').pop() : ''}
-                ${player.title ? ' · <i class="bi bi-award-fill"></i> ' + player.title : ''}
-              </p>
-            </div>
-          </div>`;
-            grid.appendChild(div);
-          });
+          if (data.image && data.image.medium) {
+            imgEl.innerHTML = `<img src="${data.image.medium}" alt="${data.name}" class="img-fluid" style="border-radius:var(--radius); max-height:350px; border:1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.3);" />`;
+          }
+
+          link.href = data.url || '#';
         })
         .catch(() => {
-          document.getElementById('leaderLoading').style.display = 'none';
-          document.getElementById('leaderError').style.display = 'block';
+          document.getElementById('movieLoading').style.display = 'none';
+          document.getElementById('movieError').style.display = 'block';
         });
 
     })();
